@@ -32,7 +32,7 @@ function validateForm(){
     if(passwordNoPermitidos(elementos[3].value.toString())){
         alertaMensaje(mensajeErrorPassword);
     }
-    if (seleccion.value == 0){
+    if (seleccion.value == 0 || seleccion == null){
 
         alertaMensaje(mensajeErrorSeleccion);
     }
@@ -40,7 +40,7 @@ function validateForm(){
   //FUNCIONES DE VALIDACIONES
   //funcion que verifican las validaciones
   function encontrarVacios(elemento){
-    return elemento.value == "";
+    return elemento.value == "" || elemento == null;
   }
   //Funcion que solo permite ingresar caracteres de la A a la Z
   function caracterLetras(elemento){
@@ -67,7 +67,6 @@ function validateForm(){
   function mensajeVacio(){
     return "Campos obligatorios";
   }
-
   function mensajeErrorLetras(){
     return "Ingrese solo letras";
   }
